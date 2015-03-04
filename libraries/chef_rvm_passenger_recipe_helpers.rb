@@ -35,7 +35,7 @@ class Chef
           require 'rubygems/dependency_installer'
 
           spec = Gem::DependencyInstaller.new.find_gems_with_sources(
-            Gem::Dependency.new("passenger", '>= 0')).last
+            Gem::Dependency.new("passenger", '>= 0')).max
 
           if spec.nil?
             raise Chef::RVMPassenger::GemVersionNotFound,
